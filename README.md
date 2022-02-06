@@ -8,12 +8,17 @@
 - Note: This project illustrates some native Python3 modules related to RESTFul development
 
 ## How to run this
-- After you clone this repository in the terminal of your choice, run the following command:
-``` $ docker run --rm -p 8888:8888 adhocteam/noclist```
-- In another terminal or tab, from the project directory type:
-``` $ python3 badsec.py
+#### After you clone this repository in the terminal of your choice, run the following command:
+#### Note that if the docker image doesn't exist it will be downloaded
+``` 
+$ docker run --rm -p 8888:8888 adhocteam/noclist
 ```
-- You should expect to see output of several userid's of users from the server as a list of dictionaries as such:
+
+#### In another terminal or tab, from the project directory type:
+``` 
+$ python3 badsec.py
+``` 
+#### You should expect to see output of several userid's of users from the server as a list of dictionaries as such:
 ```
 ["9757263792576857988", "7789651288773276582", "16283886502782682407", "...etc"]
 ```
