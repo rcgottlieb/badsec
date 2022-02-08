@@ -2,9 +2,9 @@
 
 ## Requirements
 - git (version 2.32.0 (Apple Git-132) used)
-- Pyhon3.9 (version 3.9.10 used on macOS 12.2)
-- Docker to run the container conaining the RESTFul server (version 4.4.2 (73305) Docker Deskop used)
-- An image or url to a conainer running a RESTful server
+- Python 3.9 (version 3.9.10 used on macOS 12.2)
+- Docker to run the container containing the RESTFul server (version 4.4.2 (73305) Docker Deskop used)
+- An image or url to a container running a RESTful server
 - Note: This project illustrates some native Python3 modules related to RESTFul development
 
 ## How to run this
