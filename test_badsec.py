@@ -11,6 +11,7 @@ class MyTestCase(unittest.TestCase):
         :return:
         '''
 
+
         headers = dict()
         headers['accept'] = 'application/json'
         headers['User-Agent'] = "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:48.0) Gecko/20100101 Firefox/48.0"
@@ -36,6 +37,32 @@ class MyTestCase(unittest.TestCase):
         auth_response, succeeded = badsec.connect_to_badsec_server_using_request(auth_request)
         self.assertIsNone(auth_response)
         self.assertFalse(False, succeeded)
+
+    def test_get_users_response_no_token(self):
+        '''
+        This returns OK as I'm checking for lack of a response and that the request does not succeed
+        If you want to make this not succeed, change either self.assertIsNone to self.assertIs or assertFalse to
+        assertTrue
+        :return: OK
+        '''
+        jsonString = badsec.get_users_response(auth_token)
+        self.assertIsNone(jsonString)
+
+    def test_connect_with_bad_request(self):
+        '''
+        This exits as it is not given a valid request
+        :return: None
+        '''
+        badsec.connect_to_badsec_server_using_request(None)
+
+    def test_connect_to_badsec_server_using_bad_request(self):
+        '''
+        This exits as it is not given a valid request
+        :return: None
+        '''
+        badsec.connect_to_badsec_server_using_request(None)
+
+
 
 
 if __name__ == '__main__':

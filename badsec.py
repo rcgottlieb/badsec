@@ -67,13 +67,19 @@ def connect_to_badsec_server_using_request(a_request):
     server_response = None
     try:
         server_response = urllib.request.urlopen(a_request)
-    except urllib.error.HTTPError as error_response:
+    except urllib.error.HTTPError as http_error:
+        succeeded = False
+        if http_error.code == 401:
+            print("Unauthorized access", file=sys.stderr)
+        elif http_error.code == 404:
+            print("URL not found", file=sys.stderr)
+        print("error_response reason: ", http_error.reason, file=sys.stderr)
+    except urllib.error.URLError as error_response:
         succeeded = False
         global connection_attempts
         connection_attempts += 1
-        print("connection_attempt #", connection_attempts, file=sys.stderr)
-        print("error_response code: ", error_response.code, file=sys.stderr)
-        print("error_response reason: ", error_response.reason, file=sys.stderr)
+        print("URL Error: ", error_response.reason, file=sys.stderr)
+
     return server_response, succeeded
 
 
