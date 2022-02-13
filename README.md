@@ -22,7 +22,7 @@ $ python3 badsec.py
 ```
 ["9757263792576857988", "7789651288773276582", "16283886502782682407", "...etc"]
 ```
-#### To run the unittests, type following:
+#### To run the unittests, type the following:
 ``` 
 $ python3 test_badsec.py
 ```
